@@ -3,4 +3,4 @@ project(MegaWar)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(MegaWar main.cpp)
+add_executable(MegaWar main.cpp Card.cpp Card.h Deck.cpp Deck.h)

@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/kenny/CLionProjects/MegaWar/Card.cpp" "C:/Users/kenny/CLionProjects/MegaWar/cmake-build-debug/CMakeFiles/MegaWar.dir/Card.cpp.obj"
+  "C:/Users/kenny/CLionProjects/MegaWar/Deck.cpp" "C:/Users/kenny/CLionProjects/MegaWar/cmake-build-debug/CMakeFiles/MegaWar.dir/Deck.cpp.obj"
   "C:/Users/kenny/CLionProjects/MegaWar/main.cpp" "C:/Users/kenny/CLionProjects/MegaWar/cmake-build-debug/CMakeFiles/MegaWar.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")

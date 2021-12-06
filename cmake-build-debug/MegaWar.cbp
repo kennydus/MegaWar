@@ -82,6 +82,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/kenny/CLionProjects/MegaWar/Card.cpp">
+			<Option target="MegaWar"/>
+		</Unit>
+		<Unit filename="C:/Users/kenny/CLionProjects/MegaWar/Card.h">
+			<Option target="MegaWar"/>
+		</Unit>
+		<Unit filename="C:/Users/kenny/CLionProjects/MegaWar/Deck.cpp">
+			<Option target="MegaWar"/>
+		</Unit>
+		<Unit filename="C:/Users/kenny/CLionProjects/MegaWar/Deck.h">
+			<Option target="MegaWar"/>
+		</Unit>
 		<Unit filename="C:/Users/kenny/CLionProjects/MegaWar/main.cpp">
 			<Option target="MegaWar"/>
 		</Unit>

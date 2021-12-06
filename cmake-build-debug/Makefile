@@ -118,6 +118,54 @@ MegaWar\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MegaWar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\MegaWar.dir\build
 .PHONY : MegaWar\fast
 
+Card.obj: Card.cpp.obj
+.PHONY : Card.obj
+
+# target to build an object file
+Card.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MegaWar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\MegaWar.dir\Card.cpp.obj
+.PHONY : Card.cpp.obj
+
+Card.i: Card.cpp.i
+.PHONY : Card.i
+
+# target to preprocess a source file
+Card.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MegaWar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\MegaWar.dir\Card.cpp.i
+.PHONY : Card.cpp.i
+
+Card.s: Card.cpp.s
+.PHONY : Card.s
+
+# target to generate assembly for a file
+Card.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MegaWar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\MegaWar.dir\Card.cpp.s
+.PHONY : Card.cpp.s
+
+Deck.obj: Deck.cpp.obj
+.PHONY : Deck.obj
+
+# target to build an object file
+Deck.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MegaWar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\MegaWar.dir\Deck.cpp.obj
+.PHONY : Deck.cpp.obj
+
+Deck.i: Deck.cpp.i
+.PHONY : Deck.i
+
+# target to preprocess a source file
+Deck.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MegaWar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\MegaWar.dir\Deck.cpp.i
+.PHONY : Deck.cpp.i
+
+Deck.s: Deck.cpp.s
+.PHONY : Deck.s
+
+# target to generate assembly for a file
+Deck.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MegaWar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\MegaWar.dir\Deck.cpp.s
+.PHONY : Deck.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -151,6 +199,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... MegaWar
+	@echo ... Card.obj
+	@echo ... Card.i
+	@echo ... Card.s
+	@echo ... Deck.obj
+	@echo ... Deck.i
+	@echo ... Deck.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
