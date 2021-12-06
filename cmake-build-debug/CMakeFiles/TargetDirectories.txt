@@ -1,0 +1,3 @@
+C:/Users/kenny/CLionProjects/MegaWar/cmake-build-debug/CMakeFiles/MegaWar.dir
+C:/Users/kenny/CLionProjects/MegaWar/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kenny/CLionProjects/MegaWar/cmake-build-debug/CMakeFiles/rebuild_cache.dir
