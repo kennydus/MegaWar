@@ -1,3 +1,11 @@
+//  Kenny Du
+//  Class (CECS 282-01)
+//  Project Name (Prog 6 – MegaWar / Inheritance)
+//  Due Date (12/08/21)
+//
+//  I certify that this program is my own original work. I did not copy any part of this program from
+//  any other source. I further certify that I typed each and every line of code in this program.
+
 #include <iostream>
 #include "Deck.h"
 #include "MegaDeck.h"
@@ -38,7 +46,7 @@ int main() {
     //Deal cards to players
     //push_back
     int playerNum = 0;  //keeps track of which player we are dealing to
-    while (megaDeck.numCardsLeft > 0){
+    while (megaDeck.cardsLeft() > 0){
         players[playerNum].addCard(megaDeck.deal());
         playerNum++;
         playerNum = playerNum % numPlayers;     // ensures that we are only giving cards to those in 'players' vector
@@ -70,17 +78,17 @@ int main() {
                 }
             }
         }
-        cout << "\nCards in normal battle: ";
-        for (int i = 0; i < warPile.getNumCards(); i++){
-            warPile.showCard(i);
-            cout << " ";
-        }
-        cout << endl;
+//        cout << "\nCards in normal battle: ";
+//        for (int i = 0; i < warPile.getNumCards(); i++){
+//            warPile.showCard(i);
+//            cout << " ";
+//        }
+//        cout << endl;
 
 
         // go to war!
         if (pAtWar.size() > 1) {
-            cout << "\nWe at war: " << endl;
+//            cout << "\nWe are in a war: " << endl;
             vector<Player*> pAtMultiWar(pAtWar.size());
 
             // the while loop will start another war if previous war ended with multiple players having the highest card
@@ -143,7 +151,7 @@ int main() {
         }
 
 
-        cout << "Battle " << battleNum << " Stats:" << endl;
+        cout << "\nBattle " << battleNum << " Stats:" << endl;
         for (int i = 1; i <= players.size(); i++){
             Player p = players[i - 1];
             cout << "Player " << i << ": Fierceness = " << p.getFierceness() << "\tCards = " << p.getNumCards() <<

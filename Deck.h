@@ -8,9 +8,10 @@
 #include "Card.h"
 
 class Deck {
+private:
+    int numCardsLeft;
 public:
     Deck();
-    int numCardsLeft;
     void addDeck();
     Card deal();
     void shuffle();
