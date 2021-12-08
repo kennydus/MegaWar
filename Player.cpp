@@ -7,8 +7,27 @@
 double Player::getFierceness() {
     int rankSum = 0;
     vector<Card>::iterator iter;
+
+    if (pile.empty())   // meaning the player has no cards
+        return 0;
+
     for (iter = pile.begin(); iter < pile.end(); iter++)
         rankSum += iter->getValue();
-    double fierceness = double(rankSum) / getNumCards();
-    return fierceness;
+    return double(rankSum) / getNumCards();
+}
+
+int Player::getNumBattles() {
+    return numBattles;
+}
+
+int Player::getNumWins() {
+    return numWins;
+}
+
+void Player::addBattle() {
+    numBattles++;
+}
+
+void Player::addWin() {
+    numWins++;
 }

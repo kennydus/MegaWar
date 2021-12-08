@@ -2,6 +2,7 @@
 // Created by kenny on 12/6/2021.
 //
 
+#include <iostream>
 #include "CardPile.h"
 
 
@@ -17,4 +18,8 @@ Card CardPile::removeCard() {
 
 int CardPile::getNumCards() {
     return pile.size();
+}
+
+void CardPile::showCard(int i) {
+    pile[i].showCard();
 }

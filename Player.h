@@ -14,6 +14,10 @@ private:
     int numWins = 0;
 public:
     double getFierceness();
+    int getNumBattles();
+    int getNumWins();
+    void addBattle();
+    void addWin();
 
 };
 

@@ -24,7 +24,7 @@ Deck::Deck() {      // constructor which creates a deck of 52 cards
 }
 
 void Deck::addDeck() {
-    numCardsLeft = 52;
+    numCardsLeft += 52;
     Deck();
 }
 

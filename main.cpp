@@ -9,8 +9,15 @@
 
 
 int main() {
+    WarPile warFaceUps;
+
+    WarPile warPile;
+    LostAndFound lostAndFound;
+    int battleNum = 1;
     int numPlayers;
     int numDecks;
+    int numPlayersDead = 0;
+
     cout<<"How many players will be playing MegaWar?" << endl;
     cin >> numPlayers;
     while(numPlayers <= 1){
@@ -27,6 +34,130 @@ int main() {
     MegaDeck megaDeck(numDecks);
     megaDeck.shuffle();
     megaDeck.showDeck();
+
+    //Deal cards to players
+    //push_back
+    int playerNum = 0;  //keeps track of which player we are dealing to
+    while (megaDeck.numCardsLeft > 0){
+        players[playerNum].addCard(megaDeck.deal());
+        playerNum++;
+        playerNum = playerNum % numPlayers;     // ensures that we are only giving cards to those in 'players' vector
+    }
+
+    while (numPlayersDead != (numPlayers - 1)){
+        //Find out whose card is the greatest
+        int rankMax = 0;
+        Player* battleWinner = nullptr;
+        vector<Player> pAtWar;
+
+        // Normal Battle
+        for (int i = 0; i < numPlayers; i++){
+//            rankMax = 0;
+
+            if (players[i].getNumCards() > 0){      // only live players
+                Card temp = players[i].removeCard();
+                warPile.addCard(temp);
+                players[i].addBattle();
+                if (temp.getValue() > rankMax) {    // check if current player's card is the highest
+                    rankMax = temp.getValue();
+                    battleWinner = &players[i];
+                    pAtWar.clear();     // since this card is the new max, clear the candidates for war
+                    pAtWar.push_back(players[i]);
+                }
+                // if the card is the same rank of another in the pile, make them a candidate for war
+                else if (temp.getValue() == rankMax){
+                    pAtWar.push_back(players[i]);
+                }
+            }
+        }
+        cout << "\nCards in normal battle: ";
+        for (int i = 0; i < warPile.getNumCards(); i++){
+            warPile.showCard(i);
+            cout << " ";
+        }
+        cout << endl;
+
+
+        // go to war!
+        if (pAtWar.size() > 1) {
+            vector<Player> pAtMultiWar(pAtWar.size());
+
+            // the while loop will start another war if previous war ended with multiple players having the highest card
+            // aka, multi-war
+            while (pAtMultiWar.size() > 1){
+                pAtMultiWar.clear();
+                rankMax = 0;
+                battleWinner = nullptr;
+                for (int i = 0; i < pAtWar.size(); i++) {
+                    pAtWar[i].addBattle();
+
+                    // if player cannot continue the war, put all their cards in the warPile
+                    if (pAtWar[i].getNumCards() < 4) {
+                        int numDeadCards = pAtWar[i].getNumCards();
+                        for (int j = 0; j < numDeadCards; j++) {
+                            warPile.addCard(pAtWar[i].removeCard());
+                        }
+                    }
+                    else {
+                        // each player places 3 cards face down
+                        for (int k = 0; k < 3; k++)
+                            warPile.addCard(pAtWar[i].removeCard());
+                        // player then puts a card face up for battle
+                        Card temp = pAtWar[i].removeCard();
+                        warPile.addCard(temp);
+                        cout << "warCard = "; temp.showCard(); cout << endl;
+
+                        if (temp.getValue() > rankMax) {    // check if current player's card is the highest
+                            rankMax = temp.getValue();
+                            battleWinner = &pAtWar[i];
+                            pAtMultiWar.clear();   // since this card is the new max, clear the candidates for multi war
+                            pAtMultiWar.push_back(pAtWar[i]);
+                        }
+                        // if the card is the same rank of current highest in play, make them a candidate for multi war
+                        else if (temp.getValue() == rankMax) {
+                            pAtMultiWar.push_back(pAtWar[i]);
+                        }
+                    }
+                }
+                pAtWar.clear();
+                for (Player player : pAtMultiWar)
+                    pAtWar.push_back(player);
+            }
+        }
+
+
+        // we have a verdict for the battle/war
+        if (battleWinner == nullptr) {    // meaning no players could finish the war...
+            for (int i = 0; i < warPile.getNumCards(); i++)
+                lostAndFound.addCard(warPile.removeCard());
+        }
+        else{   // meaning a player won the battle/war
+            battleWinner->addWin();
+            int cardsInWarPile = warPile.getNumCards();
+            for (int i = 0; i < cardsInWarPile; i++)
+                battleWinner->addCard(warPile.removeCard());
+            int cardsInLF = lostAndFound.getNumCards();
+            for (int j = 0; j < cardsInLF; j++)
+                battleWinner->addCard(lostAndFound.removeCard());
+        }
+
+
+        cout << "Battle " << battleNum << " Stats:" << endl;
+        for (int i = 1; i <= players.size(); i++){
+            Player p = players[i - 1];
+            cout << "Player " << i << ": Fierceness = " << p.getFierceness() << "\tCards = " << p.getNumCards() <<
+                     "\tBattles = " << p.getNumBattles() << "\tWon = " << p.getNumWins() << endl;
+
+            }
+        battleNum++;
+
+
+        numPlayersDead = 0;
+        for (int i = 0; i < numPlayers; i++){
+            if (players[i].getFierceness() == 0)
+                 numPlayersDead++;
+         }
+    }
 
 
     return 0;

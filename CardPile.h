@@ -16,6 +16,7 @@ public:
     void addCard(Card);
     Card removeCard();
     int getNumCards();
+    void showCard(int);
     //sort?
 
 
