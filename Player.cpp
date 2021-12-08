@@ -1,5 +1,5 @@
 //
-// Created by kenny on 12/7/2021.
+// Created by kenny on 12/6/2021.
 //
 
 #include "Player.h"
@@ -13,7 +13,9 @@ double Player::getFierceness() {
 
     for (iter = pile.begin(); iter < pile.end(); iter++)
         rankSum += iter->getValue();
-    return double(rankSum) / getNumCards();
+    double fiercenessRounded = (double) rankSum / pile.size();
+    fiercenessRounded = (int)(fiercenessRounded * 100.0)/100.0;
+    return fiercenessRounded;
 }
 
 int Player::getNumBattles() {

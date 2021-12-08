@@ -10,7 +10,6 @@
 
 //Card deck[52];
 vector<Card> deck;
-int cardsInADeck = 52;
 std::random_device rd;
 
 Deck::Deck() {      // constructor which creates a deck of 52 cards
@@ -36,14 +35,7 @@ Card Deck::deal() {
 }
 
 void Deck::shuffle() {
-
     std::shuffle(deck.begin(), deck.end(), rd);
-//    for (int i = 0; i < cardsInADeck; i = i + 2) {   // swapping every other card with another random card
-//        int randIndex = rand() % 52;                 // rather than all for simplicity.
-//        Card temp = deck[i];                        // making temporary card in order to swap
-//        deck[i] = deck[randIndex];
-//        deck[randIndex] = temp;
-//    }
 }
 
 int Deck::cardsLeft() {
@@ -55,7 +47,7 @@ void Deck::showDeck() {
     for (auto i = deck.begin(); i != deck.end(); ++i) {
         i->showCard();
         cout << " ";
-        if (++counter % 13 == 0)
+        if (++counter % 5 == 0)
             cout << endl;
     }
 }
