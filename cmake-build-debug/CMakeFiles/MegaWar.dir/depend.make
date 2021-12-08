@@ -12,7 +12,32 @@ CMakeFiles\MegaWar.dir\Deck.cpp.obj: ..\Card.h
 CMakeFiles\MegaWar.dir\Deck.cpp.obj: ..\Deck.cpp
 CMakeFiles\MegaWar.dir\Deck.cpp.obj: ..\Deck.h
 
+CMakeFiles\MegaWar.dir\LostAndFound.cpp.obj: ..\Card.h
+CMakeFiles\MegaWar.dir\LostAndFound.cpp.obj: ..\CardPile.h
+CMakeFiles\MegaWar.dir\LostAndFound.cpp.obj: ..\LostAndFound.cpp
+CMakeFiles\MegaWar.dir\LostAndFound.cpp.obj: ..\LostAndFound.h
+
+CMakeFiles\MegaWar.dir\MegaDeck.cpp.obj: ..\Card.h
+CMakeFiles\MegaWar.dir\MegaDeck.cpp.obj: ..\Deck.h
+CMakeFiles\MegaWar.dir\MegaDeck.cpp.obj: ..\MegaDeck.cpp
+CMakeFiles\MegaWar.dir\MegaDeck.cpp.obj: ..\MegaDeck.h
+
+CMakeFiles\MegaWar.dir\Player.cpp.obj: ..\Card.h
+CMakeFiles\MegaWar.dir\Player.cpp.obj: ..\CardPile.h
+CMakeFiles\MegaWar.dir\Player.cpp.obj: ..\Player.cpp
+CMakeFiles\MegaWar.dir\Player.cpp.obj: ..\Player.h
+
+CMakeFiles\MegaWar.dir\WarPile.cpp.obj: ..\Card.h
+CMakeFiles\MegaWar.dir\WarPile.cpp.obj: ..\CardPile.h
+CMakeFiles\MegaWar.dir\WarPile.cpp.obj: ..\WarPile.cpp
+CMakeFiles\MegaWar.dir\WarPile.cpp.obj: ..\WarPile.h
+
 CMakeFiles\MegaWar.dir\main.cpp.obj: ..\Card.h
+CMakeFiles\MegaWar.dir\main.cpp.obj: ..\CardPile.h
 CMakeFiles\MegaWar.dir\main.cpp.obj: ..\Deck.h
+CMakeFiles\MegaWar.dir\main.cpp.obj: ..\LostAndFound.h
+CMakeFiles\MegaWar.dir\main.cpp.obj: ..\MegaDeck.h
+CMakeFiles\MegaWar.dir\main.cpp.obj: ..\Player.h
+CMakeFiles\MegaWar.dir\main.cpp.obj: ..\WarPile.h
 CMakeFiles\MegaWar.dir\main.cpp.obj: ..\main.cpp
 

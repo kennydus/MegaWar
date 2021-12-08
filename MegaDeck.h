@@ -9,7 +9,9 @@
 #include "Deck.h"
 
 class MegaDeck : public Deck {
-
+public:
+    MegaDeck();
+    MegaDeck(int numDecks);
 };
 
 

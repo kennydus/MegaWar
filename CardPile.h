@@ -13,8 +13,9 @@ class CardPile {
 protected:
     vector<Card> pile;
 public:
-    void addCard();
+    void addCard(Card);
     Card removeCard();
+    int getNumCards();
     //sort?
 
 

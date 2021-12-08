@@ -21,32 +21,28 @@ void Card::setCard(RANK r, SUIT s) {
 
 }
 int Card::getValue() {      // Returning the respective values of the "ace" and "face" cards
-    if (rank == 'A')
-        return 1;
-    else if (rank == 'T')
-        return 10;
-    else if (rank == 'J')
-        return 11;
-    else if (rank == 'Q')
-        return 12;
-    else if (rank == 'K')
-        return 13;
-
-    return (int) rank - 48;     // Converting ASCII values of the "number" cards back to their actual integer values
+    switch (rank){
+        case ACE: return 1;
+        case TWO: return 2;
+        case THREE: return 3;
+        case FOUR: return 4;
+        case FIVE: return 5;
+        case SIX: return 6;
+        case SEVEN: return 7;
+        case EIGHT: return 8;
+        case NINE: return 9;
+        case TEN: return 10;
+        case JACK: return 11;
+        case QUEEN: return 12;
+        case KING: return 13;
+    }
 }
 
 
 void Card::showCard() {
 
-//    if (rank == 'T'){
-//        cout << "10" << suit;
-//    }
-//    else
-//        cout << rank << suit;
-//
-//    cout << " ";
     switch (rank){
-        case ACE: cout << "1"; break;
+        case ACE: cout << "A"; break;
         case TWO: cout << "2"; break;
         case THREE: cout << "3"; break;
         case FOUR: cout << "4"; break;
@@ -56,9 +52,9 @@ void Card::showCard() {
         case EIGHT: cout << "8"; break;
         case NINE: cout << "9"; break;
         case TEN: cout << "10"; break;
-        case JACK: cout << "11"; break;
-        case QUEEN: cout << "12"; break;
-        case KING: cout << "13"; break;
+        case JACK: cout << "J"; break;
+        case QUEEN: cout << "Q"; break;
+        case KING: cout << "K"; break;
         default: cout << "Rank Unknown";
     }
     switch (suit){

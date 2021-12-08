@@ -13,28 +13,17 @@ vector<Card> deck;
 int cardsInADeck = 52;
 std::random_device rd;
 
-Deck::Deck() {      // constructor which creates a deck of 52 cards. ace of spades is on top, followed by the other
-    numCardsLeft = 52;  // spades in order, then followed by hearts --> diamonds --> clubs (same order)
-    char rankDict[13] = {'A' , '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K'};
-    char suitDict[4] = {'S', 'D', 'H', 'C'};
-//    int index = 0;
+Deck::Deck() {      // constructor which creates a deck of 52 cards
+    numCardsLeft = 52;
     for (int s = HEART; s <= SPADE; ++s){
         for (int r = ACE; r <= KING; ++r){
             deck.push_back(Card(static_cast<RANK>(r), static_cast<SUIT>(s)));
         }
-
     }
-//    for (int suit = 0; suit < 4; suit++){
-//        for (int rank = 0; rank < 13; rank++) {
-//            deck.push_back(Card(rankDict[rank], suitDict[suit]));   //todo: use enum
-//            deck[index].setCard(rankDict[rank], suitDict[suit]);
-//            index++;
-//        }
-//    }
 
 }
 
-void Deck::refreshDeck() {  // resets the number of cards left, and recreates the deck to look like a new one.
+void Deck::addDeck() {
     numCardsLeft = 52;
     Deck();
 }

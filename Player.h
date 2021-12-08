@@ -9,6 +9,11 @@
 #include "CardPile.h"
 
 class Player : public CardPile {
+private:
+    int numBattles = 0;
+    int numWins = 0;
+public:
+    double getFierceness();
 
 };
 

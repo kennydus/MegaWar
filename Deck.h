@@ -11,7 +11,7 @@ class Deck {
 public:
     Deck();
     int numCardsLeft;
-    void refreshDeck();
+    void addDeck();
     Card deal();
     void shuffle();
     int cardsLeft();
