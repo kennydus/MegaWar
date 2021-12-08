@@ -5,17 +5,17 @@
 #include "Card.h"
 #include <iostream>
 
-Card::Card() {
-    rank = 'X';
-    suit = 'X';
-}
+//Card::Card() {
+//    rank = 'X';
+//    suit = 'X';
+//}
 
-Card::Card(char r, char s) {
+Card::Card(RANK r, SUIT s) {
     rank = r;
     suit = s;
 }
 
-void Card::setCard(char r, char s) {
+void Card::setCard(RANK r, SUIT s) {
     rank = r;
     suit = s;
 
@@ -38,11 +38,38 @@ int Card::getValue() {      // Returning the respective values of the "ace" and 
 
 void Card::showCard() {
 
-    if (rank == 'T'){
-        cout << "10" << suit;
+//    if (rank == 'T'){
+//        cout << "10" << suit;
+//    }
+//    else
+//        cout << rank << suit;
+//
+//    cout << " ";
+    switch (rank){
+        case ACE: cout << "1"; break;
+        case TWO: cout << "2"; break;
+        case THREE: cout << "3"; break;
+        case FOUR: cout << "4"; break;
+        case FIVE: cout << "5"; break;
+        case SIX: cout << "6"; break;
+        case SEVEN: cout << "7"; break;
+        case EIGHT: cout << "8"; break;
+        case NINE: cout << "9"; break;
+        case TEN: cout << "10"; break;
+        case JACK: cout << "11"; break;
+        case QUEEN: cout << "12"; break;
+        case KING: cout << "13"; break;
+        default: cout << "Rank Unknown";
     }
-    else
-        cout << rank << suit;
+    switch (suit){
+        case(HEART): cout << "H"; break;
+        case(DIAMOND): cout << "D"; break;
+        case(CLUB): cout << "C"; break;
+        case(SPADE): cout << "S"; break;
+    }
+}
 
-    cout << " ";
+bool Card::operator<(Card right){
+    return rank < right.rank;
+
 }

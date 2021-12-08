@@ -7,18 +7,21 @@
 #include <string>
 using namespace std;
 
+enum SUIT {HEART, DIAMOND, CLUB, SPADE};
+enum RANK {ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING};
 
 class Card {
 private:
-    char rank;
-    char suit;
+    RANK rank;
+    SUIT suit;
 public:
-    Card();
-    Card(char r, char s);
-    void setCard(char r, char s);
+//    Card();
+    Card(RANK r, SUIT s);
+    void setCard(RANK r, SUIT s);
     int getValue();
     void showCard();
-    char getSuit(); //added for MegaWar
+//    char getSuit(); //added for MegaWar
+    bool operator<(Card);
 };
 
 

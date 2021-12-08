@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/kenny/CLionProjects/MegaWar/Card.cpp
+Card.h
+C:/Users/kenny/CLionProjects/MegaWar/Card.h
+iostream
+-
+
+C:/Users/kenny/CLionProjects/MegaWar/Card.h
+string
+-
+

@@ -18,13 +18,19 @@ Deck::Deck() {      // constructor which creates a deck of 52 cards. ace of spad
     char rankDict[13] = {'A' , '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K'};
     char suitDict[4] = {'S', 'D', 'H', 'C'};
 //    int index = 0;
-    for (int suit = 0; suit < 4; suit++){
-        for (int rank = 0; rank < 13; rank++) {
-            deck.push_back(Card(rankDict[rank], suitDict[suit]));
+    for (int s = HEART; s <= SPADE; ++s){
+        for (int r = ACE; r <= KING; ++r){
+            deck.push_back(Card(static_cast<RANK>(r), static_cast<SUIT>(s)));
+        }
+
+    }
+//    for (int suit = 0; suit < 4; suit++){
+//        for (int rank = 0; rank < 13; rank++) {
+//            deck.push_back(Card(rankDict[rank], suitDict[suit]));   //todo: use enum
 //            deck[index].setCard(rankDict[rank], suitDict[suit]);
 //            index++;
-        }
-    }
+//        }
+//    }
 
 }
 
